@@ -1,0 +1,31 @@
+name: Validate spring boot api
+
+on:
+  push:
+    paths:
+      - 'todo-frontend/**'
+      - '.github/workflows/**'
+    branches:
+      - main
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  validate:
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v3
+
+        - name: Set up JDK 17
+          uses: actions/setup-java@v3
+          with:
+            java-version: '17'
+            distribution: 'temurin'
+            cache: maven
+
+        - name: Validate Spring Boot API
+          run: |
+            cd todo-frontend
+            mvn clean verify

@@ -1,0 +1,38 @@
+name: Build and Test React App
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  paths:
+    - 'todo-frontend/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        working-directory: todo-frontend/
+        run: npm install
+
+      - name: Build React app
+        working-directory: todo-frontend/
+        run: npm run build
+
+      - name: Test React app
+        working-directory: todo-frontend/
+        run: npm test
+
+      - name: e2e test React app
+        working-directory: todo-frontend/
+        run: npm run run-cypress

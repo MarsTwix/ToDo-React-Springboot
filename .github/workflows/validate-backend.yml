@@ -27,5 +27,5 @@ jobs:
 
         - name: Validate Spring Boot API
           run: |
-            cd todo-frontend
+            cd todo-backend
             mvn clean verify

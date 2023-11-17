@@ -4,12 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'todo-frontend/**'
-  pull_request:
-    branches: 
-      - main
-  
 
 jobs:
   build:

@@ -2,6 +2,8 @@ name: Build and Test React App
 
 on:
   push:
+    paths:
+      - 'todo-frontend/**'
     branches:
       - main
   pull_request:

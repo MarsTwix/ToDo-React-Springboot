@@ -3,7 +3,7 @@ name: Validate spring boot api
 on:
   push:
     paths:
-      - 'todo-frontend/**'
+      - 'api/**'
       - '.github/workflows/**'
     branches:
       - main
@@ -27,5 +27,5 @@ jobs:
 
         - name: Validate Spring Boot API
           run: |
-            cd todo-backend
+            cd api
             mvn clean verify

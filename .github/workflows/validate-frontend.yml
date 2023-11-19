@@ -3,7 +3,7 @@ name: Validate React App
 on:
   push:
     paths:
-      - 'todo-frontend/**'
+      - 'app/**'
       - '.github/workflows/**'
     branches:
       - main
@@ -26,17 +26,17 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        working-directory: todo-frontend/
+        working-directory: app/
         run: npm install
 
       - name: Build React app
-        working-directory: todo-frontend/
+        working-directory: app/
         run: npm run build
 
       - name: Test React app
-        working-directory: todo-frontend/
+        working-directory: app/
         run: npm test
 
       - name: e2e test React app
-        working-directory: todo-frontend/
+        working-directory: app/
         run: npm run run-cypress

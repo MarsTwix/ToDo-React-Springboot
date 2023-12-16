@@ -4,4 +4,4 @@ describe('React Application', () => {
   
         cy.get('h1').should('contain', 'Hello, React!').debug()
     });
-  });
+});

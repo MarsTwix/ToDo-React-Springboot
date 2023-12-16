@@ -6,8 +6,11 @@ import org.springframework.web.bind.annotation.*;
 import com.example.todo.models.Todo;
 import com.example.todo.services.TodoService;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/todos")
 public class TodoController {

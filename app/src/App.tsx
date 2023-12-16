@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
-
-interface Todo {
-  id: number;
-  title: string;
-}
+import { useEffect, useState } from 'react';
+import { Todo } from './models/todo';
+import api from './api';
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/todos')
-      .then(response => response.json())
-      .then(data => setTodos(data));
+    api.todo.getAll().then(todos => setTodos(todos));
   }, []);
 
   return (

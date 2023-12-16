@@ -8,7 +8,7 @@ CREATE TABLE todos (
 );
 
 -- Insert some sample to-do items
-INSERT INTO todos (title, description, due_date) VALUES
+INSERT INTO todos (title, description) VALUES
   ('Finish coding project', 'Complete all required tasks and submit project'),
   ('Buy groceries', 'Milk, eggs, bread, fruits, vegetables'),
   ('Go to the gym', '30 minutes of cardio and strength training');

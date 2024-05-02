@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Todo } from './models/todo';
-import api from './api';
+import { Todo } from '#/models/todo';
+import api from '#/api';
+import TodoItems from '#/components/todo/TodoItem';
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -12,11 +13,11 @@ function App() {
   return (
     <div className="App">
       <h1>Hello, React!</h1>
-      <ul>
-        {todos.map(todo => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ul>
+      {
+        todos.map(todo => (
+          <TodoItems key={todo.id} todo={todo} />
+        ))
+      }
     </div>
   );
 }

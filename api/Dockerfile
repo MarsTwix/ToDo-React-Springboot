@@ -12,6 +12,8 @@ RUN ./mvnw -B package
 
 FROM openjdk:17.0.2-slim-buster
 
+RUN apt-get -y update; apt-get -y install curl
+
 COPY --from=build target/*.jar ./app.jar
 
 EXPOSE 8080

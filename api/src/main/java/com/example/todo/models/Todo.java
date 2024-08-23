@@ -23,4 +23,16 @@ public class Todo {
     private String title;
     private String description;
     private boolean completed;
+
+    public Todo(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void toggleCompleted() {
+      this.completed = !this.completed;
+    }
 }
